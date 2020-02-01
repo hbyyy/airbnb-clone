@@ -51,7 +51,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECTS_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECTS_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

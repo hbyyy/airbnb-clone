@@ -7,10 +7,12 @@ from conversations.models import Conversations, Message
 @admin.register(Conversations)
 class ConversationsAdmin(admin.ModelAdmin):
     """Conversations Admin Definition"""
-    pass
+
+    list_display = ("__str__", "count_messages", "count_participants")
 
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
     """Message Admin Definition"""
-    pass
+
+    list_display = ("__str__", "created")
