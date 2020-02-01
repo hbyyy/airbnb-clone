@@ -8,7 +8,7 @@ from users.choice import GENDER_CHOICE, LANGUAGE_CHOICE, CURRENCY_CHOICES
 
 class User(AbstractUser):
     """ Custom user model"""
-    avatar = models.ImageField(blank=True, null=True)
+    avatar = models.ImageField(upload_to='user/avatars', blank=True)
     gender = models.CharField(choices=GENDER_CHOICE, max_length=10, blank=True)
     bio = models.TextField(blank=True)
     birthday = models.DateField(blank=True, null=True)
