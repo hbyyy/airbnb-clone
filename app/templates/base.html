@@ -5,11 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block page_name %}{% endblock %}| Nbnb</title>
+    <title>{% block page_title %}{% endblock %}| Nbnb</title>
 </head>
 <body>
-{% include 'partials/header.html' %}
-
+<header>
+    {% include 'partials/nav.html' %}
+    {% block search-bar %}
+        <form action="{% url 'rooms:search' %}" method="get">
+            <input name="city" placeholder="Search By City">
+        </form>
+    {% endblock %}
+</header>
 {% block content %}{% endblock %}
 
 {% include 'partials/footer.html' %}

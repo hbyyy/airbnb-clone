@@ -8,7 +8,9 @@
     {{ now }}
 
     {% for room in rooms %}
-     <h1>{{ room.name }} / ${{ room.price }}</h1>
+     <h3>
+         <a href="{% url 'rooms:detail' pk=room.pk %}">{{ room.name }} / ${{ room.price }}</a>
+     </h3>
     {% endfor %}
 
 
@@ -25,5 +27,5 @@
 {#    {% for page in page_range %}#}
 {#        <a href="?page={{ page }}">{{ page }}</a>#}
 {#    {% endfor %}#}
-
+<a href="{% url 'rooms:detail' pk=500 %}">asdf</a>
 {% endblock %}
